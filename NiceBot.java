@@ -10,7 +10,7 @@
  * @version April 2012
  *
  */
-public class Magpie4
+public class NiceBot
 {
 	/**
 	 * Get a default greeting 	

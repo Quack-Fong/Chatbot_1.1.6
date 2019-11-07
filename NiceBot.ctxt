@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.target=Magpie4
+comment0.target=NiceBot
 comment0.text=\r\n\ A\ program\ to\ carry\ on\ conversations\ with\ a\ human\ user.\r\n\ This\ version\:\r\n<ul><li>\r\n\ \t\tUses\ advanced\ search\ for\ keywords\ \r\n</li><li>\r\n\ \t\tWill\ transform\ statements\ as\ well\ as\ react\ to\ keywords\r\n</li></ul>\r\n\ @author\ Laurie\ White\r\n\ @version\ April\ 2012\r\n\r\n
 comment1.params=
 comment1.target=java.lang.String\ getGreeting()
