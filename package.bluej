@@ -2,10 +2,10 @@
 dependency1.from=NiceBotrunner
 dependency1.to=NiceBot
 dependency1.type=UsesDependency
-editor.fx.0.height=737
-editor.fx.0.width=814
-editor.fx.0.x=110
-editor.fx.0.y=36
+editor.fx.0.height=825
+editor.fx.0.width=768
+editor.fx.0.x=778
+editor.fx.0.y=6
 objectbench.height=92
 objectbench.width=452
 package.divider.horizontal=0.5995297805642633
