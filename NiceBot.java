@@ -1,10 +1,13 @@
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * A program to carry on conversations with a human user.
  * This version:
  *<ul><li>
- * 		Uses advanced search for keywords 
+ *      Uses advanced search for keywords 
  *</li><li>
- * 		Will transform statements as well as react to keywords
+ *      Will transform statements as well as react to keywords
  *</li></ul>
  * @author Laurie White
  * @version April 2012
@@ -12,29 +15,29 @@
  */
 public class NiceBot
 {
-	/**
-	 * Get a default greeting 	
-	 * @return a greeting
-	 */	
-	public String getGreeting()
-	{
-		return "Hello, let's talk.";
-	}
-	
-	/**
-	 * Gives a response to a user statement
-	 * 
-	 * @param statement
-	 *            the user statement
-	 * @return a response based on the rules given
-	 */
-	public String getResponse(String statement)
-	{
-		String response = "";
-		if (statement.length() == 0)
-		{
-			response = "Say something, please.";
-		}
+    /**
+     * Get a default greeting   
+     * @return a greeting
+     */ 
+    public String getGreeting()
+    {
+        return "Hello, let's talk.";
+    }
+    
+    /**
+     * Gives a response to a user statement
+     * 
+     * @param statement
+     *            the user statement
+     * @return a response based on the rules given
+     */
+    public String getResponse(String statement)
+    {
+        String response = "";
+        if (statement.length() == 0)
+        {
+            response = "Say something, please.";
+        }
 
 		else if (findKeyword(statement, "no") >= 0)
 		{
@@ -53,6 +56,10 @@ public class NiceBot
 		{
 			response = transformIWantToStatement(statement);
 		}
+		else if (findKeyword(statement, "I feel", 0) >= 0)
+		{
+			response = transformIFeelStatement(statement);
+		}
 
 		else
 		{
@@ -70,6 +77,7 @@ public class NiceBot
 				response = getRandomResponse();
 			}
 		}
+		
 		return response;
 	}
 	
@@ -122,10 +130,41 @@ public class NiceBot
 		return "What makes you think that I " + restOfStatement + " you?";
 	}
 	
-	
+	private String transformIFeelStatement(String statement){
+	       //  Remove the final period, if there is one
+		statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+		
+		int psnOfFeel = findKeyword (statement, "I feel", 0);
+		
+		String restOfStatement = statement.substring(psnOfFeel + 6, statement.length());
+		
+		//String badWords = "bad mad depressed sad anxious unworthy unwanted alone";
+		String[] badWords = {"bad", "mad", "depressed", "sad", "anxious", "unworthy", "unwanted", "alone"};
+		String[] goodWords = {"happy", "glad", "relieved", "joyful", "ecstatic", "great", "amazing", "fantastic"};
+		
+		String response = "null";
+		
+		for (int i=0;i<8;i++){
+		  if (restOfStatement.contains(badWords[i])){
+		      response = "Sorry that you feel" + restOfStatement + " right now. But things can always get better!";
+		      
+		  }
+		  else if (restOfStatement.contains(goodWords[i])){
+		      response = "I'm glad that you feel" + restOfStatement + " right now!";
+		      
+		  }
+		}
+		
+		return response;
+	}
 
-	
-	
 	/**
 	 * Search for one word in phrase.  The search is not case sensitive.
 	 * This method will check that the given goal is not a substring of a longer string
