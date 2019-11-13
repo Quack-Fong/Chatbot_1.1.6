@@ -35,7 +35,27 @@ public class NiceBot
 		{
 			response = "Say something, please.";
 		}
-
+		
+		else if (findKeyword(statement, "my name is") >= 0 || findKeyword(statement, "i am") >= 0 || findKeyword(statement, "i'm") >= 0)
+		{
+                    String username = "";
+                    if (statement.contains("my name is"))
+                    {
+                        int namenum = findKeyword(statement, "my name is", 0);
+                        username = statement.substring(namenum + 10).trim();
+                    }
+                    else if (statement.contains("i am"))
+                    {
+                        int namenum = findKeyword(statement, "i am", 0);
+                        username = statement.substring(namenum + 4).trim();
+                    }
+                    else if (statement.contains("i'm"))
+                    {
+                        int namenum = findKeyword(statement, "i'm", 0);
+                        username = statement.substring(namenum + 3).trim();
+                    }
+                    response = "Hi " + username + "!";
+                }
 		else if (findKeyword(statement, "no") >= 0)
 		{
 			response = "Why so negative?";
