@@ -199,18 +199,47 @@ public class NiceBot
             statement = statement.substring(0, statement
                     .length() - 1);
         }
-        String ghandi = "In a gentle way, you can shake the world. ~ Ghandi";
-        String jahseh = "The saddest thing about betrayal is that it never comes from enemies, it comes from those you trust the most. ~ Jahseh";
-        String mlk = "Our lives begin to end the day we become silent about things that matter. ~ MLK";
-        String obama = "The cynics may be the loudest voices - but I promise you, they will accomplish the least. ~ Obama";
-        String mandela = "A winner is a dreamer who never gives up. ~ Nelson Mandela";
-        String daylen = "Don't hate what you can't imitate. ~ Daylen Boen";
-        String lac = "Do something idk :/";
-        String guarav = "Don't be small brain ~ Gaurav";
-        String hrishik = "Grades aren't everything ~ Hrishik";
-        String[] quotes = {ghandi, jahseh, mlk, obama, mandela, daylen, lac, guarav, hrishik};
-        int i = (int)((Math.random()*8)+0);
-        return quotes[i];
+        statement = statement.toLowerCase();
+         if (statement.contains("ghandi"))
+        {
+            return "In a gentle way, you can shake the world. ~ Ghandi";
+        }
+        if (statement.contains("luther") || statement.contains("mlk"))
+        {
+            return "Our lives begin to end the day we become silent about things that matter. ~ MLK";
+        }
+        if (statement.contains("obama"))
+        {
+            return "The cynics may be the loudest voices - but I promise you, they will accomplish the least. ~ Obama";
+        }
+        if (statement.contains("mandela"))
+        {
+            return "A winner is a dreamer who never gives up. ~ Nelson Mandela";
+        }
+        if (statement.contains("daylen"))
+        {
+            return "Don't hate what you can't imitate. ~ Daylen Boen";
+        }
+        if (statement.contains("lac"))
+        {
+            return "Do something idk :/ ~ Lac";
+        }
+        if (statement.contains("gaurav"))
+        {
+            return "Don't be small brain ~ Gaurav";
+        }
+        if (statement.contains("ghandi"))
+        {
+            return "Grades aren't everything ~ Hrishik";
+        }
+        if (statement.contains("jahseh") || statement.contains("xxx"))
+        {
+            return "Follow your dreams, and know that even though you have lost, you have guardian angels watching over you, day in and day out. ~ Jahseh Onfroy";
+        }
+        else
+        {
+            return "I'm sorry I couldn't find that quote; maybe try another one?";
+        }
     }
     /**
      * Take a statement with "I want to <something>." and transform it into 
