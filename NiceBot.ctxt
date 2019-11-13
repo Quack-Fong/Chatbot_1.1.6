@@ -15,6 +15,7 @@ comment4.target=java.lang.String\ transformYouMeStatement(java.lang.String)
 comment4.text=\r\n\ Take\ a\ statement\ with\ "you\ <something>\ me"\ and\ transform\ it\ into\ \r\n\ "What\ makes\ you\ think\ that\ I\ <something>\ you?"\r\n\ @param\ statement\ the\ user\ statement,\ assumed\ to\ contain\ "you"\ followed\ by\ "me"\r\n\ @return\ the\ transformed\ statement\r\n
 comment5.params=statement
 comment5.target=java.lang.String\ transformIFeelStatement(java.lang.String)
+comment5.text=\r\n\ Take\ a\ statement\ with\ "I\ feel\ <emotion>"\ and\ transform\ it\ into\ either\:\r\n\ BAD\ EMOTION\:\ I'm\ sorry\ that\ you\ feel\ <emotion>\ right\ now...etc.\r\n\ GOOD\ EMOTION\:\ I'm\ glad\ that\ you\ feel\ <emotion>\ right\ now...etc.\r\n\ @param\ statement\ the\ user\ statement,\ assumed\ to\ contain\ "I\ feel"\ followed\ by\ an\ emotion\r\n\ @return\ the\ transformed\ statement\r\n
 comment6.params=statement\ goal\ startPos
 comment6.target=int\ findKeyword(java.lang.String,\ java.lang.String,\ int)
 comment6.text=\r\n\ Search\ for\ one\ word\ in\ phrase.\ \ The\ search\ is\ not\ case\ sensitive.\r\n\ This\ method\ will\ check\ that\ the\ given\ goal\ is\ not\ a\ substring\ of\ a\ longer\ string\r\n\ (so,\ for\ example,\ "I\ know"\ does\ not\ contain\ "no").\ \ \r\n\ @param\ statement\ the\ string\ to\ search\r\n\ @param\ goal\ the\ string\ to\ search\ for\r\n\ @param\ startPos\ the\ character\ of\ the\ string\ to\ begin\ the\ search\ at\r\n\ @return\ the\ index\ of\ the\ first\ occurrence\ of\ goal\ in\ statement\ or\ -1\ if\ it's\ not\ found\r\n
