@@ -186,7 +186,7 @@ public class NiceBot
     }
     
     /**
-     *This method finds if the user asks for a quote and gives them a random quote from a random person.
+     *This method finds if the user asks for a quote and gives them a quote based on what they said.
      */
     private String famousQuote(String statement)
     {
