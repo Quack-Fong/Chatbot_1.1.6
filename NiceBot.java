@@ -150,6 +150,12 @@ public class NiceBot
         {
             response = transformIFeelStatement(statement);
         }
+        
+        else if (findKeyword(statement, "quote", 0) >= 0)
+        {
+            response = famousQuote(statement);
+        }
+
 
         else
         {
@@ -265,6 +271,73 @@ public class NiceBot
         return response;
     }
 
+    /**
+     * Take a statement with "you <something> me" and transform it into 
+     * "What makes you think that I <something> you?"
+     * @param statement the user statement, assumed to contain "you" followed by "me"
+     * @return the transformed statement
+     */
+    private String famousQuote(String statement)
+    {
+        //  Remove the final period, if there is one
+        statement = statement.trim();
+        String lastChar = statement.substring(statement
+                .length() - 1);
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement
+                    .length() - 1);
+        }
+        String jahseh = "The saddest thing about betrayal is that it never comes from enemies, it comes from those you trust the most. ~ Jahseh";
+        String mlk = "Our lives begin to end the day we become silent about things that matter. ~ MLK";
+        String obama = "The cynics may be the loudest voices - but I promise you, they will accomplish the least. ~ Obama";
+        String mandela = "A winner is a dreamer who never gives up. ~ Nelson Mandela";
+        String daylen = "Don't hate what you can't imitate. ~ Daylen Boen";
+        String lac = "Do something idk :/";
+        String gaurav = "Don't be small brain ~ Gaurav";
+        String hrishik = "Grades aren't everything ~ Hrishik";
+        if (statement.contains("ghandi"))
+        {
+            return "In a gentle way, you can shake the world. ~ Ghandi";
+        }
+        if (statement.contains("luther") || statement.contains("mlk"))
+        {
+            return "Our lives begin to end the day we become silent about things that matter. ~ MLK";
+        }
+        if (statement.contains("obama"))
+        {
+            return "IThe cynics may be the loudest voices - but I promise you, they will accomplish the least. ~ ObamaGhandi";
+        }
+        if (statement.contains("mandela"))
+        {
+            return "A winner is a dreamer who never gives up. ~ Nelson Mandela";
+        }
+        if (statement.contains("daylen"))
+        {
+            return "Don't hate what you can't imitate. ~ Daylen Boen";
+        }
+        if (statement.contains("lac"))
+        {
+            return "Do something idk :/Boen";
+        }
+        if (statement.contains("gaurav"))
+        {
+            return "Don't be small brain ~ Gaurav";
+        }
+        if (statement.contains("ghandi"))
+        {
+            return "Grades aren't everything ~ Hrishik";
+        }
+        if (statement.contains("jahseh") || statement.contains("xxx"))
+        {
+            return "Spotlight, uh, moonlight, uh ~ Jahseh Dwayne Ricardo Onfroy";
+        }
+        else
+        {
+            return "I'm sorry I couldn't find that quote; maybe try another one?";
+        }
+    }
+    
     /**
      * Search for one word in phrase.  The search is not case sensitive.
      * This method will check that the given goal is not a substring of a longer string
