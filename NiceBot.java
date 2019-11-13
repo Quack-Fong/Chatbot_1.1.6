@@ -199,6 +199,7 @@ public class NiceBot
             statement = statement.substring(0, statement
                     .length() - 1);
         }
+        statement = statement.toLowerCase();
          if (statement.contains("ghandi"))
         {
             return "In a gentle way, you can shake the world. ~ Ghandi";
@@ -209,7 +210,7 @@ public class NiceBot
         }
         if (statement.contains("obama"))
         {
-            return "IThe cynics may be the loudest voices - but I promise you, they will accomplish the least. ~ ObamaGhandi";
+            return "The cynics may be the loudest voices - but I promise you, they will accomplish the least. ~ Obama";
         }
         if (statement.contains("mandela"))
         {
@@ -221,7 +222,7 @@ public class NiceBot
         }
         if (statement.contains("lac"))
         {
-            return "Do something idk :/Boen";
+            return "Do something idk :/ ~ Lac";
         }
         if (statement.contains("gaurav"))
         {
@@ -233,7 +234,7 @@ public class NiceBot
         }
         if (statement.contains("jahseh") || statement.contains("xxx"))
         {
-            return "Spotlight, uh, moonlight, uh ~ Jahseh Dwayne Ricardo Onfroy";
+            return "Follow your dreams, and know that even though you have lost, you have guardian angels watching over you, day in and day out. ~ Jahseh Onfroy";
         }
         else
         {
